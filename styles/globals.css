@@ -1,1 +1,65 @@
+/* CramWiz Global Styles */
+:root {
+  --black: #08080f;
+  --b2: #0f0f1c;
+  --b3: #15152a;
+  --b4: #1c1c35;
+  --blue: #1a6cff;
+  --bb: #4d8fff;
+  --bg: rgba(26, 108, 255, 0.15);
+  --bd: #0a2a6e;
+  --white: #eef0ff;
+  --wd: #8890b8;
+  --wf: #2a2d4a;
+  --red: #ff4d6d;
+  --green: #00d68f;
+  --gold: #f5a623;
+  --fn: 'DM Sans', sans-serif;
+  --fm: 'DM Mono', monospace;
+  --r: 14px;
+  --rs: 8px;
+  --tr: 0.18s ease;
+}
 
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--fn);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Background glow */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(26,108,255,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(26,108,255,.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--b4); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--bd); }
+
+/* Selection */
+::selection { background: var(--bg); color: var(--white); }
